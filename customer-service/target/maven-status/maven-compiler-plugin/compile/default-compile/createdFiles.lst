@@ -1,0 +1,8 @@
+com/banking/platform/customer/services/CustomerService.class
+com/banking/platform/customer/configuration/DocumentationConfig.class
+com/banking/platform/customer/entities/Customer$CustomerBuilder.class
+com/banking/platform/customer/controllers/CustomerController.class
+com/banking/platform/customer/repositories/CustomerRepository.class
+com/banking/platform/customer/entities/Customer.class
+com/banking/platform/customer/dto/CustomerDto.class
+com/banking/platform/customer/CustomerApplication.class

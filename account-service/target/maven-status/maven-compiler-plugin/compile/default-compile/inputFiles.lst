@@ -1,0 +1,9 @@
+/home/rashid/Desktop/2024/dev/jubilee/banking-platform/account-service/src/main/java/com/banking/platform/account/services/CustomerNotFoundException.java
+/home/rashid/Desktop/2024/dev/jubilee/banking-platform/account-service/src/main/java/com/banking/platform/account/repositories/AccountRepository.java
+/home/rashid/Desktop/2024/dev/jubilee/banking-platform/account-service/src/main/java/com/banking/platform/account/entities/Account.java
+/home/rashid/Desktop/2024/dev/jubilee/banking-platform/account-service/src/main/java/com/banking/platform/account/services/AccountService.java
+/home/rashid/Desktop/2024/dev/jubilee/banking-platform/account-service/src/main/java/com/banking/platform/account/configuration/DocumentationConfig.java
+/home/rashid/Desktop/2024/dev/jubilee/banking-platform/account-service/src/main/java/com/banking/platform/account/controllers/AccountController.java
+/home/rashid/Desktop/2024/dev/jubilee/banking-platform/account-service/src/main/java/com/banking/platform/account/AccountApplication.java
+/home/rashid/Desktop/2024/dev/jubilee/banking-platform/account-service/src/main/java/com/banking/platform/account/configuration/RestTemplateConfig.java
+/home/rashid/Desktop/2024/dev/jubilee/banking-platform/account-service/src/main/java/com/banking/platform/account/dto/CustomerDto.java

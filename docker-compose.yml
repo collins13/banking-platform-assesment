@@ -1,0 +1,81 @@
+version: '3.8'
+
+services:
+  customer-db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: customer_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - customer-data:/var/lib/postgresql/data
+
+  account-db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: account_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5434:5432"
+    volumes:
+      - account-data:/var/lib/postgresql/data
+
+  card-db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: card_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5435:5432"
+    volumes:
+      - card-data:/var/lib/postgresql/data
+
+  customer-service:
+    build:
+      context: .
+      dockerfile: customer-service/Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - customer-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://customer-db:5432/customer_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+
+  account-service:
+    build:
+      context: .
+      dockerfile: account-service/Dockerfile
+    ports:
+      - "8082:8082"
+    depends_on:
+      - account-db
+      - customer-service
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://account-db:5432/account_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+
+  card-service:
+    build:
+      context: .
+      dockerfile: card-service/Dockerfile
+    ports:
+      - "8083:8083"
+    depends_on:
+      - card-db
+      - account-service
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://card-db:5432/card_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+
+volumes:
+  customer-data:
+  account-data:
+  card-data:
